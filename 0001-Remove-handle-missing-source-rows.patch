@@ -1,0 +1,25 @@
+From 6846cd5b20d8d386360f016d7ae222113845c0f9 Mon Sep 17 00:00:00 2001
+From: timlie <timlievens@gmail.com>
+Date: Mon, 3 May 2021 06:48:52 +0200
+Subject: [PATCH] Remove handle missing source rows
+
+---
+ drush/src/Drupal/Migrate/MigrateExecutable.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drush/src/Drupal/Migrate/MigrateExecutable.php b/drush/src/Drupal/Migrate/MigrateExecutable.php
+index 5a2bad4..659d119 100644
+--- a/drush/src/Drupal/Migrate/MigrateExecutable.php
++++ b/drush/src/Drupal/Migrate/MigrateExecutable.php
+@@ -229,7 +229,7 @@ class MigrateExecutable extends MigrateExecutableBase
+     public function onPreImport(MigrateImportEvent $event): void
+     {
+         $migration = $event->getMigration();
+-        $this->handleMissingSourceRows($migration);
++        //$this->handleMissingSourceRows($migration);
+         $this->initProgressBar($migration);
+     }
+ 
+-- 
+2.25.1
+
